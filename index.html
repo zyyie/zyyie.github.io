@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KZR Threads - Premium Streetwear</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #1a1a1a;
+      --secondary-color: #ff6b35;
+      --accent-color: #f8f9fa;
+      --text-dark: #2c2c2c;
+      --text-light: #6c757d;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background-color: #fff;
+      padding: 10px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .top-nav .nav-link {
+      color: var(--text-dark) !important;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    
+    .top-nav .nav-link.active {
+      text-decoration: underline;
+    }
+    
+    /* Main Header */
+    .main-header {
+      background-color: #fff;
+      padding: 20px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 2.5rem;
+      color: var(--secondary-color) !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .header-icons i {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    
+    .header-icons i:hover {
+      color: var(--secondary-color);
+    }
+    
+    .search-input {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      background: transparent;
+      padding: 5px 10px;
+      font-size: 0.9rem;
+      outline: none;
+      width: 120px;
+    }
+    
+    .search-input::placeholder {
+      color: #666;
+    }
+    
+    .header-icon {
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      margin-left: 15px;
+      transition: color 0.3s ease;
+    }
+    
+    .header-icon:hover {
+      color: var(--secondary-color);
+    }
+    
+    .search-container {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    
+    .search-container i {
+      margin-left: 5px;
+      color: var(--text-dark);
+    }
+    
+    /* Main Navigation */
+    .main-nav {
+      background-color: #fff;
+      padding: 15px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .main-nav .nav-link {
+      color: var(--text-dark) !important;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      margin-right: 30px;
+      text-decoration: none;
+    }
+    
+    .main-nav .nav-link:hover {
+      color: var(--secondary-color) !important;
+    }
+    
+    /* Hero Section - REVOLVE Style */
+    .hero-section {
+      position: relative;
+      height: 70vh;
+      display: flex;
+      overflow: hidden;
+    }
+    
+    .hero-panel {
+      flex: 1;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .hero-panel.left {
+      background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
+      background-image: url('https://cdn.shopify.com/s/files/1/0293/9277/products/08-18-22Studio4_RT_DJ_11-13-42_30_ART1050XX_Black_3126_EH_1200x1200.jpg?v=1661450258');
+      background-size: cover;
+      background-position: top center;
+    }
+    
+    .hero-panel.center {
+      background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+      background-image: url('https://tse3.mm.bing.net/th/id/OIP.w8nMNAzPAYPfPKCJY80uJgHaE8?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    .hero-panel.right {
+      background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
+      background-image: url('https://millionsofcelebs.com/wp-content/uploads/2020/08/1640c88c74a8296ae207364c5162f7.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .hero-content {
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 3;
+    }
+    
+    .hero-overlay h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    
+    .hero-overlay p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .btn-shop {
+      background-color: rgba(0,0,0,0.8);
+      color: white;
+      border: 2px solid white;
+      padding: 12px 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-shop:hover {
+      background-color: white;
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+    
+    /* Product Cards */
+    .card {
+      background-color: #fff;
+      border: none;
+      border-radius: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .card img {
+      border-radius: 0;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .about-section {
+      background-color: var(--accent-color);
+      padding: 80px 0;
+    }
+    
+    .contact-section {
+      padding: 80px 0;
+    }
+    
+    .contact-icon {
+      font-size: 2rem;
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 50px 0 20px;
+    }
+    
+    .footer a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer a:hover {
+      color: #e55a2b;
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section {
+        height: 50vh;
+        flex-direction: column;
+      }
+      
+      .hero-panel {
+        height: 33.33%;
+      }
+      
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-overlay h2 {
+        font-size: 1.8rem;
+      }
+      
+      .navbar-brand {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Header -->
+  <div class="main-header">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="#home">KZR Threads</a>
+        <div class="header-icons d-flex align-items-center">
+          <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search">
+            <i class="fas fa-search"></i>
+          </div>
+          <i class="far fa-heart header-icon"></i>
+          <i class="fas fa-shopping-bag header-icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <div class="main-nav">
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <a href="#products" class="nav-link">New Today</a>
+        <a href="#products" class="nav-link">T-Shirts</a>
+        <a href="#hoodies" class="nav-link">Hoodies</a>
+        <a href="#caps" class="nav-link">Caps</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#" class="nav-link">Sale</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section - REVOLVE Style -->
+  <section id="home" class="hero-section">
+    <div class="hero-panel left">
+    </div>
+    <div class="hero-panel center">
+      <div class="hero-overlay">
+        <h2>OUR FALL COLLECTION</h2>
+        <p>First up: premium tees, then the hoodies you'll style over everything.</p>
+        <a href="#products" class="btn-shop">Shop Now</a>
+      </div>
+    </div>
+    <div class="hero-panel right">
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://hooktab.com/wp-content/uploads/2024/07/luffy9.jpg" class="card-img-top" alt="T-Shirt">
+            <div class="card-body">
+              <h5 class="card-title">KZR Black Tee</h5>
+              <p class="card-text">₱799</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://img4.dhresource.com/webp/m/0x0/f3/albu/km/g/08/139f666b-cbd3-4b35-8621-9ad6425c0a01.jpg" class="card-img-top" alt="T-Shirt">
+            <div class="card-body">
+              <h5 class="card-title">KZR Ash Gray Tee</h5>
+              <p class="card-text">₱749</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://i5.walmartimages.com/seo/Trending-Hellstar-rending-Comfort-Colors-Ts-Unisex-Comfort-Tee-T-Shirt-Color-Black-Size-S_f0501cad-e291-400c-b0a1-25f68b22ff6a.61d5ac83a594b03059eac2a5cacc5ad9.jpeg" class="card-img-top" alt="T-Shirt">
+            <div class="card-body">
+              <h5 class="card-title">KZR Black Oversized Tee</h5>
+              <p class="card-text">₱899</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://ae01.alicdn.com/kf/S368a366ecb884d8e85a4a782ca42b342W.jpg" class="card-img-top" alt="T-Shirt">
+            <div class="card-body">
+              <h5 class="card-title">KZR Washable Graphic Tee</h5>
+              <p class="card-text">₱849</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://m.media-amazon.com/images/I/618nqH39ZBS._AC_UX385_.jpg" class="card-img-top" alt="T-Shirt">
+            <div class="card-body">
+              <h5 class="card-title">KZR Vintage Tee</h5>
+              <p class="card-text">₱799</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://evesunday.com/cdn/shop/files/36b0cc28.jpg?v=1709398325" class="card-img-top" alt="T-Shirt">
+            <div class="card-body">
+              <h5 class="card-title">KZR White Street Tee</h5>
+              <p class="card-text">₱729</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://media-photos.depop.com/b1/30222886/1448617016_49e4cd948dfc41cfba22267f15782d17/P0.jpg" class="card-img-top" alt="Vintage T-Shirt">
+            <div class="card-body">
+              <h5 class="card-title">KZR Vintage Tee</h5>
+              <p class="card-text">₱799</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://i.pinimg.com/originals/40/86/ac/4086ac74be0ee5ca2207916c03a81887.jpg" class="card-img-top" alt="Cool T-Shirt">
+            <div class="card-body">
+              <h5 class="card-title">KZR Cool Tee</h5>
+              <p class="card-text">₱849</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hoodies Section -->
+  <section id="hoodies" class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 class="section-title">Hoodies Collection</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://media-photos.depop.com/b1/14737891/1806908125_9b98aad5950c48e7b4bd5a5af6c5ee98/P0.jpg" class="card-img-top" alt="Hoodie">
+            <div class="card-body">
+              <h5 class="card-title">KZR Black Hoodie</h5>
+              <p class="card-text">₱1,299</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://images.stockx.com/images/Revenge-x-City-Morgue-Metal-Tour-Hoodie-Cement.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1718033530" class="card-img-top" alt="Hoodie">
+            <div class="card-body">
+              <h5 class="card-title">KZR White Hoodie</h5>
+              <p class="card-text">₱1,199</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://i5.walmartimages.com/seo/Byoo-Big-Boys-Baseball-Jacket-Colorblock-Varsity-Hoodie-Cardigan-Sports-Bomber-Jacket_a3bb9346-1f15-48da-84f4-8058f9311034.7cd2c690d621bc5d7ec7508e4d58e9a7.jpeg" class="card-img-top" alt="Hoodie">
+            <div class="card-body">
+              <h5 class="card-title">KZR Black White Hoodie</h5>
+              <p class="card-text">₱1,249</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://th.bing.com/th/id/R.8025769f00afff7420c995bd528bcd23?rik=lXzonU%2bAioO2Jg&riu=http%3a%2f%2frestockar.com%2fcdn%2fshop%2ffiles%2fRevenge-Shibuya-Hoodie-Cement-front.jpg%3fv%3d1721287939&ehk=ioyhwxvqzsd%2fx1XUwSD4gTAyLh5OGRCRTKrCooeVJdk%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="Hoodie">
+            <div class="card-body">
+              <h5 class="card-title">KZR Oversized Hoodie</h5>
+              <p class="card-text">₱1,399</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://www.danezon.com/wp-content/uploads/2024/07/All-We-Need-Is-Money-Hoodie.webp" class="card-img-top" alt="Hoodie">
+            <div class="card-body">
+              <h5 class="card-title">KZR Black Hoodie</h5>
+              <p class="card-text">₱1,349</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://i.etsystatic.com/39371264/r/il/0650ea/5251015371/il_fullxfull.5251015371_64cp.jpg?v=Q7JQAukDeu" class="card-img-top" alt="Hoodie">
+            <div class="card-body">
+              <h5 class="card-title">KZR Street Hoodie</h5>
+              <p class="card-text">₱1,199</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://i.pinimg.com/originals/1c/23/44/1c23445fea010a819d5a9be929ebc43f.webp" class="card-img-top" alt="Vintage Hoodie">
+            <div class="card-body">
+              <h5 class="card-title">KZR Black Hoodie</h5>
+              <p class="card-text">₱1,299</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://static.pullandbear.net/2/photos/2023/V/0/2/p/8590/573/717/8590573717_1_1_3.jpg?t=1677662380084" class="card-img-top" alt="Cool Hoodie">
+            <div class="card-body">
+              <h5 class="card-title">KZR Cool Hoodie</h5>
+              <p class="card-text">₱1,349</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Caps Section -->
+  <section id="caps" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Caps Collection</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://img.joomcdn.net/ede7bbf159e72709eb3531ec7acc3902d9549fa1_original.jpeg" class="card-img-top" alt="Cap">
+            <div class="card-body">
+              <h5 class="card-title">KZR Dark Gray Cap</h5>
+              <p class="card-text">₱599</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://www.cdiscount.com/pdt2/6/6/3/1/700x700/mp03142663/rw/retro-casquette-bonnet-homme-femme-visiere-regl.jpg" class="card-img-top" alt="Cap">
+            <div class="card-body">
+              <h5 class="card-title">KZR Beige Cap</h5>
+              <p class="card-text">₱549</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://assets.mybrightsites.com/uploads/website/product_image/image/01-10-2017/793741/large_Baseball_cap_Blk_1200.jpg" class="card-img-top" alt="Cap">
+            <div class="card-body">
+              <h5 class="card-title">KZR Black Cap</h5>
+              <p class="card-text">₱579</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://ae01.alicdn.com/kf/Sc58da2e0eaa0480aaff893d462b0a12cb.jpg" class="card-img-top" alt="Cap">
+            <div class="card-body">
+              <h5 class="card-title">KZR Street Vibe Cap</h5>
+              <p class="card-text">₱649</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://techwearofficial.com/cdn/shop/files/fancy-like-rings-techwear-cap-techwear-official-2.jpg?v=1685959806" class="card-img-top" alt="Cap">
+            <div class="card-body">
+              <h5 class="card-title">KZR Black Chain Cap</h5>
+              <p class="card-text">₱699</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="https://ae01.alicdn.com/kf/HTB1Kc_mKpXXXXa.aXXXq6xXFXXXp/5-Colors-Solid-Baseball-Caps-font-b-for-b-font-font-b-Men-b-font-Women.jpg" class="card-img-top" alt="Cap">
+            <div class="card-body">
+              <h5 class="card-title">KZR Street Cap</h5>
+              <p class="card-text">₱629</p>
+              <a href="#" class="btn-shop btn-sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2 class="section-title">About KZR Threads</h2>
+      
+      <!-- Icons Section -->
+      <div class="row mb-5">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="text-center">
+            <i class="fas fa-tshirt contact-icon"></i>
+            <h5 style="font-size: 1.1rem;">Premium Quality</h5>
+            <p style="font-size: 0.9rem;">Only the finest materials and craftsmanship</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="text-center">
+            <i class="fas fa-heart contact-icon"></i>
+            <h5 style="font-size: 1.1rem;">Made with Love</h5>
+            <p style="font-size: 0.9rem;">Every design created with passion</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="text-center">
+            <i class="fas fa-shipping-fast contact-icon"></i>
+            <h5 style="font-size: 1.1rem;">Fast Shipping</h5>
+            <p style="font-size: 0.9rem;">Quick delivery worldwide</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="text-center">
+            <i class="fas fa-star contact-icon"></i>
+            <h5 style="font-size: 1.1rem;">Customer First</h5>
+            <p style="font-size: 0.9rem;">Your satisfaction is our priority</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Our Story Section -->
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h3 class="mb-4" style="font-size: 1.6rem;">Our Story</h3>
+          <p class="mb-4" style="font-size: 0.95rem;">KZR Threads was born from a passion for authentic streetwear that speaks to the modern generation. We believe that clothing is more than just fabric – it's a statement, a lifestyle, and a way to express your unique identity.</p>
+          <p class="mb-4" style="font-size: 0.95rem;">Founded in 2024, we've dedicated ourselves to creating premium streetwear that combines comfort, style, and quality. Every piece in our collection is carefully designed and crafted to meet the highest standards, ensuring that you not only look good but feel confident in what you wear.</p>
+          <p class="mb-4" style="font-size: 0.95rem;">Our mission is simple: to provide the modern generation with streetwear that elevates their style while maintaining the authenticity and edge that defines true street culture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="lead mb-5">Have questions about our products or need help with your order? We're here to help!</p>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <i class="fas fa-envelope contact-icon"></i>
+              <h5>Email Us</h5>
+              <p>info@kzrthreads.com</p>
+            </div>
+            <div class="col-md-4 mb-4">
+              <i class="fas fa-phone contact-icon"></i>
+              <h5>Call Us</h5>
+              <p>+1 (555) 123-4567</p>
+            </div>
+            <div class="col-md-4 mb-4">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <h5>Visit Us</h5>
+              <p>123 Fashion St, Style City</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h5 class="text-uppercase mb-3">KZR Threads</h5>
+          <p>Premium streetwear for the modern generation. Quality, style, and comfort in every piece.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h6 class="text-uppercase mb-3">Shop</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Hoodies</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">New Arrivals</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h6 class="text-uppercase mb-3">Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <h6 class="text-uppercase mb-3">Newsletter</h6>
+          <p>Subscribe to get updates on new products and exclusive offers.</p>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email">
+            <button class="btn-shop" type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">&copy; 2024 KZR Threads. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="#" class="me-3">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
