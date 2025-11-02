@@ -152,6 +152,38 @@
       border-left: 6px solid #ff6b57;
     }
     .contact-info p { margin-bottom: 12px; }
+    /* Activities styles */
+    #activities { background: #ffffff; }
+    .activity-card {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(2,8,23,0.08);
+      padding: 24px;
+      margin-bottom: 20px;
+      border-left: 6px solid #ff6b57;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .activity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(2,8,23,0.12);
+    }
+    .activity-card h4 {
+      color: #0f2b46;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .activity-card a {
+      color: #ff6600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+    }
+    .activity-card a:hover {
+      color: #e65c00;
+      text-decoration: underline;
+    }
     /* Footer styles */
     footer { padding: 36px 0; }
     .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
@@ -201,6 +233,7 @@
             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#activities">Activities</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -291,6 +324,33 @@
           <div class="skill-card">
             <i class="bi bi-lightning-charge"></i>
             <div class="skill-name">Self-Motivation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities Section -->
+  <section id="activities" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Activities</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-6">
+          <div class="activity-card">
+            <h4>Activity 4</h4>
+            <p class="mb-3">View Activity 4 on GitHub</p>
+            <a href="https://github.com/zyyie/my-phone.git" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github"></i> View on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="activity-card">
+            <h4>Activity 5</h4>
+            <p class="mb-3">View Activity 5 on GitHub</p>
+            <a href="https://github.com/zyyie/marquez.git" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github"></i> View on GitHub
+            </a>
           </div>
         </div>
       </div>
