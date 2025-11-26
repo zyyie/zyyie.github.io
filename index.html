@@ -23,15 +23,26 @@
       padding: 12px 18px; /* inner space from card edges */
     }
     nav.navbar {
-      background-color: #0f172a; /* match footer color */
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background-color: #f4f5f7; /* lighter tone to showcase logo */
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
       border-radius: 12px; /* rounded edges */
     }
     nav a.nav-link, nav .navbar-brand {
-      color: #ffffff !important;
+      color: #0f172a !important;
       font-weight: 500;
     }
-    .navbar-brand i { font-size: 22px; }
+    .navbar-brand {
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+    .navbar-logo {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+    .navbar-brand span {
+      font-weight: 600;
+    }
     .btn-orange {
       background-color: #ff6600;
       color: white;
@@ -225,6 +236,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+          <img src="logo.png" alt="Kazyra logo" class="navbar-logo">
+          <span>Kazyra Umali</span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -335,8 +350,8 @@
     <div class="container">
       <h2 class="section-title">Activities</h2>
       <div class="row g-4 justify-content-center">
-        <div class="col-lg-6">
-          <div class="activity-card">
+        <div class="col-md-6 col-xl-4">
+          <div class="activity-card h-100">
             <h4>Activity 4</h4>
             <p class="mb-3">View Activity 4 on GitHub</p>
             <a href="https://github.com/zyyie/my-phone.git" target="_blank" rel="noopener noreferrer">
@@ -344,11 +359,20 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="activity-card">
+        <div class="col-md-6 col-xl-4">
+          <div class="activity-card h-100">
             <h4>Activity 5</h4>
             <p class="mb-3">View Activity 5 on GitHub</p>
             <a href="https://github.com/zyyie/marquez.git" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github"></i> View on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="activity-card h-100">
+            <h4>Activity 6</h4>
+            <p class="mb-3">View Activity 6 on GitHub</p>
+            <a href="https://github.com/zyyie/kazyy.git" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github"></i> View on GitHub
             </a>
           </div>
